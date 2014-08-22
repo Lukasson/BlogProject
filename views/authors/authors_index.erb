@@ -1,0 +1,13 @@
+<p>
+<a href="/authors/new">Add new author</a>
+</p>
+<% @authors.each do |a| %>
+<%#
+So here, `u` is a User object (meaning it's an *instance* of the
+User class). So we can run *instance* methods on `u`.
+%>
+  <p>
+      <p><a href="/authors/<%= a.id %>"><%= a.name %></a></p>
+      <p>"<%= a.mail %>"</p>
+  </p>
+<% end %>

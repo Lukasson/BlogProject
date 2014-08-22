@@ -1,0 +1,12 @@
+<p>
+<a href="/tags/new">Add new author</a>
+</p>
+<% @tags.each do |t| %>
+<%#
+So here, `u` is a User object (meaning it's an *instance* of the
+User class). So we can run *instance* methods on `u`.
+%>
+  <p>
+      <p><a href="/tags/<%= t.id %>"><%= t.description %></a></p>
+  </p>
+<% end %>

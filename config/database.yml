@@ -1,0 +1,7 @@
+development:
+  database: db/blog.db
+  adapter: sqlite3
+
+test:
+  database: db/blog_test.db
+  adapter: sqlite3

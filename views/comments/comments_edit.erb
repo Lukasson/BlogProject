@@ -1,0 +1,7 @@
+<h1>Edit Comment</h1>
+
+<form action="/comments/<%= @comment.id %>/edit" method="post">
+  <p>Post content: <input type="text" name="content"></p>
+  <p>Post id: <input type="text" name="post_id"></p>
+  <input type="submit">
+</form>

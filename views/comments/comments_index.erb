@@ -1,0 +1,13 @@
+<p>
+<a href="/comments/new">Add new user</a>
+</p>
+<% @comments.each do |c| %>
+<%#
+So here, `u` is a User object (meaning it's an *instance* of the
+User class). So we can run *instance* methods on `u`.
+%>
+  <p>
+      <p><a href="/comments/<%= c.id %>"><%= c.id %></a></p>
+      <p>"<%= c.content %>"</p>
+  </p>
+<% end %>

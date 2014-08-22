@@ -1,0 +1,9 @@
+<p>
+<a href="/posts/new">Add new post</a>
+</p>
+<% @posts.reverse_each do |p| %>
+  <p>
+      <p><a href="/posts/<%= p.id %>"><%= p.id %></a> 
+      <p>"<%= p.content %>"</p>
+  </p>
+<% end %>

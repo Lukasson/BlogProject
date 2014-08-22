@@ -1,0 +1,25 @@
+<h1>Nothing to see here, move along...</h1>
+<h2>The blog</h2>
+
+
+<p><a href="/post/new"><button>new post</button></a></p>
+
+
+<% @posts.reverse_each do |p| %>
+
+  <h4><a href="/posts/<%= p.id %>"><%= p.id %></a> - <%= p.title %></h4>
+  <p>"<%= p.content %>"</p>
+
+  <p><a href="/posts/<%= p.id %>/comment_new"><button>add comment</button></a></p>
+  
+  <p><a href="posts/<%= p.id %>/edit"><button>edit post</button></a></p>
+
+  
+  <% p.tags.each do |t| %>
+    <% if t != [] && t != nil %>
+      <h5>Tags: </h5><a href="/posts/<%= t.id %>/tag_posts_index"><button><%= t.description %></button></a>
+    <% end %>
+  <% end %>
+  
+  <br>
+<% end %>

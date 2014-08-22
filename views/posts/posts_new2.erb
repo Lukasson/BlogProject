@@ -1,0 +1,8 @@
+<h1>New Post for <%= @author.name %></h1>
+
+<form action="/authors/<%= @author.id %>/post_create" method="post">
+  <p>Post title: <input type="text" name="title"></p>
+  <p>Post content: <input type="text" name="content"></p>
+  <p>Assign tags functionality later</p>
+  <input type="submit">
+</form>

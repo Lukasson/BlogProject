@@ -1,0 +1,7 @@
+<h1>Edit <%= @post.title %></h1>
+
+<form action="/posts/<%= @post.id %>/create" method="post">
+  <p>Post content: <input type="text" name="content"></p>
+  <p>Author_id: <input type="text" name="author_id"></p>
+  <input type="submit">  
+</form>
