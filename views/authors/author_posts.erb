@@ -1,0 +1,11 @@
+<h1>Posts by <%= @author.name %></h1>
+
+<% @author_posts.each do |p| %>
+
+  <h4><a href="/posts/<%= p.id %>"><%= p.id %></a> - <%= p.title %></h4>
+  <p>"<%= p.content %>"</p>
+  <p><a href="/posts/<%= p.id %>/comment_new"><button>Make a comment</button></a></p>
+  
+<% end %>
+
+<p><a href="/">Back to main list</a></p>

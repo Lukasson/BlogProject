@@ -1,0 +1,18 @@
+<h1>Please login to post</h1>
+
+<form action="/authors/process_login" method="post">
+  <p>Author ID <input type = "text" name="id"></p>
+  <p>Name <input type = "text" name = "name"></p>
+  <p><input type="submit"></p>
+</form>
+
+<h3>New authors must submit information before logging in</h3>
+
+<% # authors_create must show the author her/his id %>
+<form action="/authors/authors_new" method="post">
+  <p>Must enter name: <input type="text" name="name"></p>
+  <p>Must enter email address: <input type="text" name="email"></p>
+  <p><input type="submit"></p>
+</form>
+
+<p><a href="/">Return to main list</a></p>

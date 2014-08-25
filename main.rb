@@ -19,7 +19,7 @@ require_relative "./routes/tags.rb"
 
 get "/" do
   @posts=Post.all
-  binding.pry
+#  binding.pry
   erb :home
 end
 

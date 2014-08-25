@@ -1,0 +1,18 @@
+<h1>Comments for "<%= @post.title %>"</h1>
+
+<p><a href="/posts/<%= @post.id %>"><%= @post.id %></a> - "<%= @post.content %>"</p>
+<p>Posted by: <%= @post.author.name %> ~ Posted on: <%= @post.date %></p>
+
+<br>
+<h4>Comments</h4>
+
+<% @post_comments.each do |c| %>
+  
+  <p><%= c.id %> - "<%= c.content %>"</p>
+  <h6>commented on <%= c.date %></h6>
+  
+<% end %>
+
+<p><a href="/posts/<%= @post.id %>/comments_new2">Comment on this post</a></p>
+
+<p><a href="/">Back to main list</a></p>

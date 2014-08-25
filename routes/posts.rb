@@ -66,7 +66,7 @@ get "/posts/:id/delete" do
 end
 
 get "/posts/:id" do
-  binding.pry
+#  binding.pry
   @post=Post.find(params[:id])
   erb :"posts/posts_show"
 end

@@ -15,6 +15,12 @@ post "/tags/create" do
   erb :"tags/tags_create"
 end
 
+get "/posts/:tag_id/tag_posts_index" do
+  @tag=Tag.find(params[:tag_id])
+  @tag_posts=@tag.posts
+  erb :"tags/tag_posts_index"
+end
+
 get "/tags/:id/edit" do
   @tag=Tag.find(params[:id])
   erb :"tags/tags_edit"

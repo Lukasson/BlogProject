@@ -3,6 +3,7 @@
 <p>Post ID:<%= @post.id %></p>
 <p>Post content: "<%= @post.content %>"</p>
 <p>Date Posted: <%= @post.date %></p>
-<p>Author: <%= @post.author.name %></p>
+<p>Author: <a href="/authors/<%= @post.author.id %>/show"><%= @post.author.name %></a></p>
+<p><a href="/posts/<%= @post.id %>/comments_post_comments">View all comments for this post</a></p>
 
-<p><a href="/">Home</a></p>
+<p><a href="/">Back to main list</a></p>

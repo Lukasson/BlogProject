@@ -4,8 +4,17 @@ get "/authors" do
   erb :authors_index
 end
 
+get "/authors/login" do
+  @authors=Author.all
+  erb :"authors/author_login"
+end
+
 get "/authors/new" do
   erb :authors_new
+end
+
+get "/authors/authors_new" do
+  erb :"authors/authors_new"
 end
 
 post "/authors/create" do
@@ -14,6 +23,12 @@ post "/authors/create" do
     email: params[:email]
   })
   erb :"authors/authors_create"
+end
+
+get "/authors/:id/author_posts" do
+  @author=Author.find(params[:id])
+  @author_posts=@author.posts
+  erb :"authors/author_posts"
 end
 
 get "/authors/:id/edit" do
@@ -37,7 +52,7 @@ get "/authors/:id/delete" do
 end
 
 get "/authors/:id" do
-  @author=Author.find(:id)
+  @author=Author.find(params[:id])
   erb :"authors/authors_show"
 end
 

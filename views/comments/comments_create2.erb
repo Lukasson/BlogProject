@@ -2,8 +2,12 @@
 <br>
 <h4>Commented on "<%= @post.title %>"</h4>
 <p>"<%= @post.content %>"</p>
+<p><a href="/authors/<%= @post.author.id %>/show"><%= @post.author.name %></a> ~ <%= @post.date %></p>
 <br>
 <h4>Comment made: </h4>
-<p><%= @comment.content %>.</p>
-<br>
+<p>"<%= @comment.content %>"</p>
+<h6> - <%= @comment.date %></h6>
+<p><a href="/comments/<%= @comment.id %>/edit">edit comment</a></p>
+<p><a href="/authors/<%= @post.author.id %>/author_posts">All posts by this author</a></p>
+<p><a href="/posts/<%= @post.id %>/comments_post_comments">View all comments for this post</a></p>
 <a href="/">Return to main list.</a>

@@ -15,7 +15,7 @@ get "/posts/:post_id/comment_new" do
 end
 
 post "/posts/:id/comment_create" do
-  binding.pry
+#  binding.pry
   @post=Post.find(params[:id])
   @comment=Comment.create({
     content: params[:content],
@@ -25,13 +25,6 @@ post "/posts/:id/comment_create" do
   erb :"comments/comments_create2"
 end
 
-get "/posts/:tag_id/tag_posts_index" do
-  @tag=Tag.find(params[:tag_id])
-  @tag_posts=@tag.posts
-  erb :"tags/tag_posts_index"
-end
-#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-
 post "/comments/create" do
   @comment=Comment.create({
     content: params[:content],
@@ -39,6 +32,12 @@ post "/comments/create" do
     post_id: params[:post_id].to_i
   })
   erb :"comments/comments_create"
+end
+
+get "/posts/:id/comments_post_comments" do
+  @post=Post.find(params[:id])
+  @post_comments=@post.comments
+  erb :"comments/comments_post_comments"
 end
 
 get "/comments/:id/edit" do
