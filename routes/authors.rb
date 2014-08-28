@@ -9,6 +9,12 @@ get "/authors/login" do
   erb :"authors/author_login"
 end
 
+post "/authors/process_login" do
+  @author=Author.find(params["id"])
+  @author_posts=@author.posts
+  erb :"authors/authors_process_login"
+end
+
 get "/authors/new" do
   erb :authors_new
 end
@@ -17,12 +23,18 @@ get "/authors/authors_new" do
   erb :"authors/authors_new"
 end
 
-post "/authors/create" do
+post "/authors/authors_create" do
+  binding.pry
   @author=Author.create({
     name: params[:name],
     email: params[:email]
   })
   erb :"authors/authors_create"
+end
+
+get "/authors/:id/posts_new" do
+  @author=Author.find(params[:id])
+  erb :"posts/posts_new2"
 end
 
 get "/authors/:id/author_posts" do

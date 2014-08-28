@@ -1,0 +1,16 @@
+<h1>Where <%= @author.name %> does his dirty work</h1>
+
+<p><a href="/add_post"><button>New Post</button></a></p>
+
+<p><a href="/tags/create"><button>New Tag</button></a></p>
+
+<% @author_posts.each do |p| %>
+  
+  <p><%= p.id %> - <%= p.content %></p>
+  <a href="/edit_post/<%= p.id %>"><button>edit post</button></a>
+  <a href="/view_comments/<%= p.id %>"><button>view comments</button></a>
+  <a href="/include_tag/<%= p.id %>"><button>manage tags</button></a>
+  
+<% end %>
+
+<p><a href="/"><button>Home</button></a></p>
