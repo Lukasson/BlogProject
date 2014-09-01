@@ -1,0 +1,25 @@
+/* Fix the box model */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+p {font: 15px arial, sans-serif; color: red;}
+
+header {
+  background: #FFE2C5;
+  display: block;
+  margin: 10 auto;
+  color: #003145;
+}
+
+header h1 {
+  font-size: 250%%;
+}
+
+header h2 {
+  font-size: 200%;
+}
